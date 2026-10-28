@@ -1,0 +1,81 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Privacidad y cookies · ValenProjects</title><meta name="description" content="Privacidad y cookies"><link rel="canonical" href="https://valenprojects.online/privacidad/">
+<meta property="og:title" content="Privacidad y cookies · ValenProjects"><meta property="og:description" content="Privacidad y cookies"><meta property="og:type" content="website">
+<style>
+:root{--bg:#f7f8fc;--fg:#12162b;--mut:#5a6280;--card:#fff;--line:#e2e5f1;--a1:#6d5dfc;--a2:#00c2ff;--a3:#ff5ca8;--ok:#0f9d6e}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b0e1c;--fg:#eef0fb;--mut:#9aa3c4;--card:#131833;--line:#252c52;--a1:#8b7dff;--a2:#38d0ff;--a3:#ff7ab8;--ok:#3ddc97;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+a{color:var(--a1)}
+.wrap{max-width:1080px;margin:0 auto}
+header.top{position:sticky;top:0;z-index:20;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:10px max(16px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--fg);font:700 1.2rem system-ui,sans-serif;letter-spacing:-.01em}
+.logo b{background:linear-gradient(90deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:18px;font-size:.9rem}nav a{color:var(--mut);text-decoration:none}nav a:hover{color:var(--fg)}
+.hero{position:relative;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:96px max(16px,env(safe-area-inset-left,0px)) 84px;overflow:hidden;text-align:center}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:flota 14s ease-in-out infinite alternate}
+.b1{width:420px;height:420px;background:var(--a1);top:-140px;left:8%}
+.b2{width:360px;height:360px;background:var(--a2);top:20px;right:6%;animation-delay:-4s}
+.b3{width:300px;height:300px;background:var(--a3);bottom:-140px;left:42%;animation-delay:-8s;opacity:.4}
+@keyframes flota{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.blob{animation:none}.card:hover{transform:none}}
+.hero .wrap{position:relative}
+.tag{display:inline-block;font:600 .8rem system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--line);border-radius:999px;background:color-mix(in srgb,var(--card) 70%,transparent)}
+h1{font:800 clamp(2.4rem,7.5vw,4.6rem)/1.05 system-ui,sans-serif;letter-spacing:-.03em;margin:.5em auto .3em;max-width:16ch;text-wrap:balance}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--a1),var(--a2) 55%,var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:56ch;margin:0 auto 1.6em;color:var(--mut);font-size:1.15rem}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--a1),var(--a2));color:#fff;text-decoration:none;padding:13px 26px;border-radius:999px;font-weight:700;box-shadow:0 8px 24px -8px var(--a1)}
+.btn.sec{background:transparent;color:var(--fg);border:1px solid var(--line);box-shadow:none;margin-left:8px}
+section{padding:64px 0 8px}
+h2{font:750 clamp(1.7rem,4.5vw,2.4rem)/1.15 system-ui,sans-serif;letter-spacing:-.02em;margin:0 0 .4em}
+.sub{color:var(--mut);max-width:60ch;margin:0 0 1.6em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px;transition:transform .2s,box-shadow .2s;overflow:hidden;color:inherit;text-decoration:none}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px var(--a1)}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--c1),var(--c2))}
+.ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:#fff;font:800 1.3rem system-ui,sans-serif;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.card h3{margin:.2em 0 0;font:700 1.25rem system-ui,sans-serif}
+.card p{margin:0;color:var(--mut);font-size:.97rem;flex:1}
+.est{align-self:flex-start;font:700 .72rem system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mut)}
+.est.on{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.est.dev{color:var(--a3)}
+.go{font-weight:700;color:var(--a1);font-size:.92rem}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.how div{border-left:3px solid var(--a1);padding:4px 0 4px 16px}
+.how b{display:block;font-size:1.05rem;margin-bottom:2px}
+.how span{color:var(--mut);font-size:.96rem}
+
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.mem{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;font:800 1.5rem system-ui,sans-serif;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 8px 20px -10px var(--c1);margin-bottom:6px}
+.mem h3{margin:0;font:700 1.15rem system-ui,sans-serif}
+.mem .rol{font:700 .75rem system-ui,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:var(--a1)}
+.mem p{margin:.2em 0 0;color:var(--mut);font-size:.95rem}
+.mem.wide{grid-column:1/-1;flex-direction:row;align-items:center;gap:20px;flex-wrap:wrap}
+.mem.wide .avs{display:flex}.mem.wide .avs .av{margin-right:-14px;border:3px solid var(--card)}
+.mem.wide .txt{flex:1;min-width:230px}
+.nota{color:var(--mut);font-size:.85rem;margin-top:14px}
+.contacto{margin-top:64px;padding:36px;border-radius:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--a1) 18%,var(--card)),color-mix(in srgb,var(--a2) 14%,var(--card)));border:1px solid var(--line);text-align:center}
+footer{margin-top:60px;border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mut);font-size:.88rem}
+footer a{color:var(--mut)}
+.legal main{max-width:760px;margin:0 auto;padding:36px 0}.legal h1{font-size:2.2rem;max-width:none;margin:.3em 0 .5em;text-align:left;background:none;color:var(--fg)}
+.legal h2{font-size:1.25rem;margin-top:1.6em}.meta{color:var(--mut);font-size:.9rem}
+.legal table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}.legal td,.legal th{border:1px solid var(--line);padding:6px 10px;text-align:left;vertical-align:top}
+</style></head><body class="legal"><header class="top"><div class="wrap"><a class="logo" href="/"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b7dff"/><stop offset="1" stop-color="#00c2ff"/></linearGradient></defs><path d="M12 1.5l2.6 6.9 6.9 2.6-6.9 2.6L12 20.5l-2.6-6.9L2.5 11l6.9-2.6z" fill="url(#g)"/><circle cx="19" cy="19" r="2.3" fill="#ff5ca8"/></svg><span>Valen<b>Projects</b></span></a>
+<nav><a href="/#productos">Productos</a><a href="/#como">Cómo trabajamos</a><a href="/#equipo">Equipo</a><a href="/#contacto">Contacto</a></nav></div></header><main><h1>Privacidad y cookies</h1>
+<p class="meta">Última actualización: 28 de octubre de 2026.</p>
+<h2>1. Responsable</h2>
+<p><b>Antonio Valenzuela Valdes</b>, NIF 74662870V, con domicilio en Carretera de Almería 23b, bloque 7, bajo A, 29770 Torrox (Málaga). Contacto: antonio@valenprojects.online.</p>
+<h2>2. Qué datos tratamos</h2>
+<p>Esta web <b>no tiene formularios ni cuentas de usuario</b> y no guarda datos. Solo trataremos los que tú nos envíes por correo electrónico (tu dirección y lo que escribas) para responderte, con base en tu solicitud (art. 6.1.b RGPD) o en nuestro interés legítimo en atender consultas (art. 6.1.f).</p>
+<h2>3. Destinatarios</h2>
+<p>El correo de este dominio se reenvía mediante el servicio Email Routing de Cloudflare y se recibe en una cuenta de Gmail (Google). La web se aloja en GitHub Pages, que puede registrar tu dirección IP por motivos técnicos y de seguridad. No cedemos tus datos a terceros salvo obligación legal. Algunos proveedores pueden implicar transferencias fuera del Espacio Económico Europeo, amparadas en decisiones de adecuación o cláusulas contractuales tipo.</p>
+<h2>4. Conservación</h2>
+<p>Conservamos tus mensajes el tiempo necesario para atender tu consulta y, después, durante los plazos legales que correspondan.</p>
+<h2>5. Tus derechos</h2>
+<p>Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a antonio@valenprojects.online. Si crees que tus datos no se tratan correctamente, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">www.aepd.es</a>).</p>
+<h2>6. Cookies</h2>
+<p>Esta web <b>no instala cookies</b> ni usa herramientas de analítica o publicidad, ni carga recursos de terceros. Por eso no muestra aviso de cookies.</p>
+</main><footer><div class="wrap"><p><b>ValenProjects</b> · Titular: Antonio Valenzuela Valdes · NIF 74662870V<br>Carretera de Almería 23b, bloque 7, bajo A, 29770 Torrox (Málaga) · <a href="mailto:antonio@valenprojects.online">antonio@valenprojects.online</a></p>
+<p><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad y cookies</a></p></div></footer></body></html>
