@@ -24,8 +24,8 @@ PRODUCTOS = [
      "d": "Apartamento vacacional a pie de playa en Torrox Costa (Málaga). Web propia con calendario de disponibilidad conectado en tiempo casi real y reserva por WhatsApp o correo.", "c": "#14b8a6,#0ea5e9"},
     {"n": "GymBroSquads", "e": "En desarrollo", "css": "dev", "url": "",
      "d": "Aplicación de seguimiento de entrenamientos en gimnasios con un marcado carácter social: permite compartir y retar entrenamientos con amigos y grupos.", "c": "#f97316,#ef4444"},
-    {"n": "Ruta a la Plaza", "e": "Próximamente", "css": "soon", "url": "",
-     "d": "Plataforma de preparación de oposiciones: temario con apuntes, podcasts y tests con la cita de la norma, simulacros y seguimiento del progreso.", "c": "#8b5cf6,#6366f1"},
+    {"n": "Ruta a la Plaza", "e": "En línea", "css": "on", "url": "https://rutaalaplaza.com",
+     "d": "Servicio de preparación de oposiciones (apuntes, tests con la cita de la norma, simulacros y seguimiento del progreso). Es un proyecto independiente, del que es titular Lourdes; nosotros colaboramos con ella en lo técnico.", "c": "#8b5cf6,#6366f1"},
     {"n": "MenusWeb", "e": "En preparación", "css": "soon", "url": "",
      "d": "Aplicación para subir a la web los menús de restaurantes y acceder a ellos mediante códigos QR.", "c": "#eab308,#f59e0b"},
 ]
