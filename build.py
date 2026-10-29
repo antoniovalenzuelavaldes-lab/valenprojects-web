@@ -95,6 +95,9 @@ h2{font:750 clamp(1.7rem,4.5vw,2.4rem)/1.15 system-ui,sans-serif;letter-spacing:
 .mem.wide .avs{display:flex}.mem.wide .avs .av{margin-right:-14px;border:3px solid var(--card)}
 .mem.wide .txt{flex:1;min-width:230px}
 .nota{color:var(--mut);font-size:.85rem;margin-top:14px}
+.cform{display:grid;gap:12px;max-width:520px;margin:0 auto;text-align:left}.cform label{display:grid;gap:4px;font-size:.88rem;color:var(--mut)}
+.cform input,.cform textarea{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);width:100%}.cform .btn{justify-self:center;border:0;cursor:pointer}
+#cres{margin:.4em 0 0;font-size:.95rem}.contacto .nota2{font-size:.85rem;color:var(--mut);margin:.4em 0 0}
 .contacto{margin-top:64px;padding:36px;border-radius:22px;background:linear-gradient(135deg,color-mix(in srgb,var(--a1) 18%,var(--card)),color-mix(in srgb,var(--a2) 14%,var(--card)));border:1px solid var(--line);text-align:center}
 footer{margin-top:60px;border-top:1px solid var(--line);padding:26px 0 44px;color:var(--mut);font-size:.88rem}
 footer a{color:var(--mut)}
@@ -118,8 +121,15 @@ def cab(titulo, desc, ruta, legal=False):
 <nav><a href="/#productos">Productos</a><a href="/#como">Cómo trabajamos</a><a href="/#equipo">Equipo</a><a href="/#contacto">Contacto</a></nav></div></header>"""
 
 
+FORM_JS = """<script>(function(){var f=document.getElementById('cform');if(!f)return;var T0=Date.now(),r=document.getElementById('cres'),b=document.getElementById('cenv');
+f.addEventListener('submit',function(e){e.preventDefault();b.disabled=true;b.textContent='Enviando…';r.hidden=true;
+fetch('https://valenprojects-contacto.antonio-valenzuela-valdes.workers.dev',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:f.nombre.value.trim(),email:f.email.value.trim(),mensaje:f.mensaje.value,asunto:'Contacto desde la web',idioma:'es',web:f.web.value,t:T0})})
+.then(function(x){return x.json().catch(function(){return {ok:false}})}).then(function(j){if(j&&j.ok){r.textContent='¡Mensaje enviado! Te responderemos lo antes posible.';f.reset();}else{r.textContent='No hemos podido enviarlo. Inténtalo de nuevo en unos minutos.';}r.hidden=false;})
+.catch(function(){r.textContent='No hemos podido enviarlo. Inténtalo de nuevo en unos minutos.';r.hidden=false;}).then(function(){b.disabled=false;b.textContent='Enviar mensaje';});});})();</script>"""
+
+
 def pie():
-    return f"""<footer><div class="wrap"><p><b>{e(D['marca'])}</b> · Titular: {e(D['titular'])} · NIF {e(D['nif'])}<br>{e(D['domicilio'])} · <a href="mailto:{D['email']}">{D['email']}</a></p>
+    return f"""<footer><div class="wrap"><p><b>{e(D['marca'])}</b> · Titular: {e(D['titular'])} · NIF {e(D['nif'])}<br>{e(D['domicilio'])} · {D['email']} · <a href="/#contacto">Contacto</a></p>
 <p><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad y cookies</a></p></div></footer></body></html>"""
 
 
@@ -156,7 +166,9 @@ def home():
 <div><b>Transparencia</b><span>Quién está detrás, cómo contactar y qué datos se tratan, siempre a la vista.</span></div></div></section>
 <section id="equipo"><h2>El equipo</h2><p class="sub">Ocho personas, una idea fija: que las cosas salgan bien, y a ser posible con una sonrisa.</p><div class="team">{equipo_html()}</div><p class="nota">Los avatares ilustrados llegan pronto.</p></section>
 <section id="contacto"><div class="contacto"><h2>¿Hablamos?</h2><p class="sub" style="margin:0 auto 1.2em">Cuéntanos tu idea, una duda o una propuesta de colaboración.</p>
-<a class="btn" href="mailto:{D['email']}">{D['email']}</a></div></section></main>"""
+<form class="cform" id="cform"><label>Nombre<input name="nombre" required maxlength="80" autocomplete="name"></label><label>Tu correo<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+<label>Mensaje<textarea name="mensaje" rows="4" required maxlength="1500"></textarea></label><input name="web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+<button class="btn" type="submit" id="cenv">Enviar mensaje</button><p id="cres" role="status" hidden></p><p class="nota2">Usaremos tus datos solo para responderte (ver <a href="/privacidad/">privacidad</a>).</p></form></div></section></main>""" + FORM_JS
     return h + pie()
 
 
@@ -180,9 +192,9 @@ PRIV = f"""
 <h2>1. Responsable</h2>
 <p><b>{D['titular']}</b>, NIF {D['nif']}, con domicilio en {D['domicilio']}. Contacto: {D['email']}.</p>
 <h2>2. Qué datos tratamos</h2>
-<p>Esta web <b>no tiene formularios ni cuentas de usuario</b> y no guarda datos. Solo trataremos los que tú nos envíes por correo electrónico (tu dirección y lo que escribas) para responderte, con base en tu solicitud (art. 6.1.b RGPD) o en nuestro interés legítimo en atender consultas (art. 6.1.f).</p>
+<p>Esta web <b>no tiene cuentas de usuario</b> y no guarda datos. Solo trataremos los que tú nos envíes mediante el formulario de contacto o por correo electrónico (tu nombre, tu dirección y lo que escribas) para responderte, con base en tu solicitud (art. 6.1.b RGPD) o en nuestro interés legítimo en atender consultas (art. 6.1.f).</p>
 <h2>3. Destinatarios</h2>
-<p>El correo de este dominio se reenvía mediante el servicio Email Routing de Cloudflare y se recibe en una cuenta de Gmail (Google). La web se aloja en GitHub Pages, que puede registrar tu dirección IP por motivos técnicos y de seguridad. No cedemos tus datos a terceros salvo obligación legal. Algunos proveedores pueden implicar transferencias fuera del Espacio Económico Europeo, amparadas en decisiones de adecuación o cláusulas contractuales tipo.</p>
+<p>El formulario de contacto envía tu mensaje a nuestro correo mediante un servicio de Cloudflare (que solo lo transmite y no lo guarda). El correo de este dominio se reenvía mediante el servicio Email Routing de Cloudflare y se recibe en una cuenta de Gmail (Google). La web se aloja en GitHub Pages, que puede registrar tu dirección IP por motivos técnicos y de seguridad. No cedemos tus datos a terceros salvo obligación legal. Algunos proveedores pueden implicar transferencias fuera del Espacio Económico Europeo, amparadas en decisiones de adecuación o cláusulas contractuales tipo.</p>
 <h2>4. Conservación</h2>
 <p>Conservamos tus mensajes el tiempo necesario para atender tu consulta y, después, durante los plazos legales que correspondan.</p>
 <h2>5. Tus derechos</h2>
